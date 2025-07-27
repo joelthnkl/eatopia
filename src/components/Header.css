@@ -1,0 +1,166 @@
+/* Header Layout */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.header-scrolled {
+  background-color: rgba(30, 30, 30, 0.95); /* Using new main color #1e1e1e to match footer */
+  box-shadow: 0 2px 20px rgba(32, 10, 3, 0.3); /* Using previous main color for shadow */
+  backdrop-filter: blur(20px);
+}
+
+.header-container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 1rem;
+  height: 60px;
+}
+
+/* Logo */
+.logo {
+  width: 140px;
+  height: auto;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+.logo-scrolled {
+  filter: none; /* Returns to original color */
+  width: 120px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-self: start; /* Aligns logo to the left */
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  justify-self: center; /* Centers the navigation */
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.header-scrolled .nav-links a {
+  color: var(--link-color);
+  text-shadow: none;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Action Buttons */
+.header-right {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-self: end; /* Aligns buttons to the right */
+}
+
+.get-started-btn {
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.get-started-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.book-now-btn {
+  background-color: var(--accent); /* Golden yellow */
+  border: 1.5px solid var(--accent);
+  color: var(--subtext-color); /* Dark text on golden button */
+  font-weight: 600;
+}
+
+.book-now-btn:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--subtext-color);
+}
+
+.header-scrolled .get-started-btn {
+  color: var(--text-color);
+  border-color: var(--accent);
+  text-shadow: none;
+}
+
+.header-scrolled .get-started-btn:hover {
+  background-color: var(--accent);
+  color: var(--subtext-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    grid-template-columns: auto 1fr auto;
+    padding: 0 0.5rem;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+    justify-self: center;
+  }
+  
+  .header-right {
+    gap: 0.5rem;
+    justify-self: end;
+  }
+  
+  .get-started-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}

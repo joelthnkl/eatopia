@@ -1,0 +1,47 @@
+.footer {
+  background-color: var(--bg-color); /* Using main color variable */
+  color: var(--text-color);
+  padding: 2rem 4rem;
+  margin-top: 4rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #444;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand {
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  opacity: 0.8;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}

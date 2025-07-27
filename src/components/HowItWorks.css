@@ -1,0 +1,72 @@
+.how-it-works {
+  padding: 4rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.how-it-works.section-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-it-works h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  flex: 1;
+  min-width: 200px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(32, 10, 3, 0.2); /* Using previous main color for shadow */
+  transition: transform 0.3s ease, opacity 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.section-fade-in .step-card {
+  opacity: 1;
+  transform: translateY(0);
+  animation: stepCardFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes stepCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}

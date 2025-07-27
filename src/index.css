@@ -1,0 +1,64 @@
+/* Custom color palette theme */
+:root {
+  --bg-color: #1e1e1e; /* Updated main color to match footer */
+  --section-bg: #1a1a1a; /* Slightly darker for sections */
+  --card-bg: #252525; /* Lighter variant for cards */
+  --text-color: #F6F6F9; /* Light color for main texts */
+  --subtext-color: #200A03; /* Using previous main color as subtext */
+  --link-color: #F6F6F9; /* Light color for links */
+  --accent: #F2D492; /* Golden yellow for buttons and accents */
+  --accent-hover: #E8C878; /* Slightly darker yellow for hover states */
+}
+
+/* Remove light theme since we only want dark */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+button {
+  font-family: inherit;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+.fade-in {
+  animation: fadeInApp 1s ease-in-out;
+}
+
+

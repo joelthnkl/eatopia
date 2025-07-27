@@ -1,0 +1,4 @@
+#5E3023---- For the main colors
+#F2D492---- For the buttons 
+#F6F6F9---- for the texts
+#00100B---- for the subtexts

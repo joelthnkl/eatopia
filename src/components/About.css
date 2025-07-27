@@ -1,0 +1,75 @@
+.about-section {
+  padding: 4rem 2rem;
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-section.section-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.about-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(32, 10, 3, 0.25); /* Using previous main color for shadow */
+  max-width: 300px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.3s ease, opacity 0.6s ease-out;
+}
+
+.section-fade-in .about-card {
+  opacity: 1;
+  transform: translateY(0);
+  animation: aboutCardFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes aboutCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
